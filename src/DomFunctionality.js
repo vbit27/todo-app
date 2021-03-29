@@ -62,5 +62,12 @@ const displayHeader = (() => {
 
 })() 
 
+const newTaskDom = (() => {
+    const addTaskBtn = document.querySelector('')
+
+
+})();
+
+
 export {newProjectDom, displayHeader};
 

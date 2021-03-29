@@ -40,8 +40,6 @@ function renderHeader() {
     activeProjectDetails.appendChild(activeTitle);
     activeProjectDetails.appendChild(activeDescription);
 
-
-
 }
 
 

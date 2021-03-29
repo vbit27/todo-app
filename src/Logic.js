@@ -1,5 +1,6 @@
 import { allProjects } from './index'
 import { newProject } from './Project'
+import { newTask } from './Task'
 import { renderProjects, renderHeader } from './render'
 import { displayHeader } from './DomFunctionality'
 
@@ -29,7 +30,6 @@ const deleteProject = (index) => {
         renderHeader();
     }
 
-   
 }
 
 const resetActiveProject = () => {
@@ -46,5 +46,10 @@ const activeProject = () => {
     let activeProject = allProjects.find(project => project.active == true)
     return activeProject
 } 
+
+
+const createNewTask = (name, description, dueDate, priority) => {
+    activeProject().tasks.push(newTask(name, description, dueDate, priority))
+}
 
 export { createNewProject, deleteProject, setActiveProject, activeProject }
