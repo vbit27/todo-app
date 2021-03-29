@@ -1,11 +1,11 @@
 import { createNewProject } from './Logic'
+import { renderProjcts } from './render'
 
 
 const newProjectDom = (() => {
     const addProjectBtn = document.querySelector('#add-project');
     const submitProjectBtn = document.getElementById('submit-project');
     const cancelSubmitProjectBtn = document.getElementById('cancel-submit-project')
-    const projectList = document.getElementById('project-list');
     const submitProjectWindow = document.querySelector('.submit-project-window');
     const _nameField = document.getElementById('project-name');
     const _descriptionField = document.getElementById('project-description');
@@ -29,6 +29,7 @@ const newProjectDom = (() => {
         const description = _descriptionField.value;
 
         createNewProject(name, description);
+        renderProjcts();
         clear()
         hide()
     }
