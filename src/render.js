@@ -1,4 +1,4 @@
-import { allProjects } from ".";
+import { addProjectListeners } from "./DynamicListener";
 
 function renderProjcts() {
     const projectList = document.getElementById('project-list');
@@ -21,6 +21,8 @@ function renderProjcts() {
     singleProjectContainer.appendChild(deleteProjectBtn)
     projectList.appendChild(singleProjectContainer);
     })
+
+    addProjectListeners();
 }
 
 
