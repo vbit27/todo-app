@@ -1,11 +1,15 @@
 import { allProjects } from './index'
 import { newProject } from './Project'
-import { renderProjcts } from './render'
-
+import { renderProjects, renderHeader } from './render'
+import { displayHeader } from './DomFunctionality'
 
 const createNewProject = (name, description) => {
     resetActiveProject()
     allProjects.push(newProject(name, description))
+
+    renderProjects();
+    displayHeader.show()
+    renderHeader();
 }
 
 const deleteProject = (index) => {
@@ -13,8 +17,19 @@ const deleteProject = (index) => {
         allProjects[0].active = true;
     }
 
-    allProjects.splice(index, 1)
-    renderProjcts()
+    if (allProjects.length == 1) {
+        allProjects.splice(index, 1)
+        renderProjects();
+        displayHeader.hide();
+    }
+
+    if (allProjects.length > 1) {
+        allProjects.splice(index, 1)
+        renderProjects();
+        renderHeader();
+    }
+
+   
 }
 
 const resetActiveProject = () => {
@@ -22,8 +37,14 @@ const resetActiveProject = () => {
 }
 
 const setActiveProject = (index) => {
-    resetActiveProject()
+    resetActiveProject();
     allProjects[index].active = true;
+    renderHeader();
 }
 
-export { createNewProject, deleteProject, setActiveProject }
+const activeProject = () => {
+    let activeProject = allProjects.find(project => project.active == true)
+    return activeProject
+} 
+
+export { createNewProject, deleteProject, setActiveProject, activeProject }

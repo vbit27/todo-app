@@ -1,6 +1,7 @@
 import { addProjectListeners } from "./DynamicListener";
+import { activeProject } from './Logic'
 
-function renderProjcts() {
+function renderProjects() {
     const projectList = document.getElementById('project-list');
 
     projectList.innerHTML = '';
@@ -25,6 +26,24 @@ function renderProjcts() {
     addProjectListeners();
 }
 
+function renderHeader() {
+    const activeProjectDetails = document.querySelector('.active-project-description')
+
+    activeProjectDetails.innerHTML = "";
+
+    const activeTitle = document.createElement('h3');
+    activeTitle.innerText = activeProject().name;
+
+    const activeDescription = document.createElement('h5');
+    activeDescription.innerText = activeProject().description;
+
+    activeProjectDetails.appendChild(activeTitle);
+    activeProjectDetails.appendChild(activeDescription);
 
 
-export { renderProjcts }
+
+}
+
+
+
+export { renderProjects, renderHeader }

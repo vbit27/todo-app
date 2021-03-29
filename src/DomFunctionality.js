@@ -1,5 +1,5 @@
 import { createNewProject } from './Logic'
-import { renderProjcts } from './render'
+import { renderProjects, renderHeader } from './render'
 
 
 const newProjectDom = (() => {
@@ -29,9 +29,8 @@ const newProjectDom = (() => {
         const description = _descriptionField.value;
 
         createNewProject(name, description);
-        renderProjcts();
-        clear()
-        hide()
+        clear();
+        hide();
     }
 
     return {
@@ -44,5 +43,24 @@ const newProjectDom = (() => {
     }
 })();
 
-export {newProjectDom};
+
+const displayHeader = (() => {
+    const headerContainer = document.querySelector('.active-project-container');
+
+    function show() {
+        headerContainer.style.display = "block";
+    }
+
+    function hide() {
+        headerContainer.style.display = "none";
+    }
+
+    return {
+        show,
+        hide
+    }
+
+})() 
+
+export {newProjectDom, displayHeader};
 
