@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  padding: 1rem 0;
+  font-family: Arial;
+  font-size: 3vw;
+  letter-spacing: 0.1rem;
+  background-color: #73a780;
+  color: #ffffff;
+  height: fit-content;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  height: 100vh;
+}
+
+/* POP UP WINDOWS */
+
+#submit-task-window {
+  display: none;
+}
+
+#submit-task-window.visible {
+  display: block;
+}
+
+/* Project style */
+
+#add-project {
+  width: 30%;
+  border: none;
+  border-radius: 10%;
+  margin: 0.2rem;
+  background: #fa994d;
+  color: white;
+}
+
+.project-container {
+  background-color: rgb(255, 255, 255);
+}
+
+.project-container-title {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-container-title h3 {
+  flex-grow: 6;
+}
+
+.project-container-title button {
+  flex-grow: 1;
+}
+
+.single-project-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-project-container h3 {
+  flex-grow: 6;
+}
+
+.single-project-container button {
+  flex-grow: 1;
+}
+
+/* Task Style */
+
+.tasks-container {
+  background-color: rgb(216, 236, 195);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active-project-container {
+  display: flex;
+  direction: row;
+  background-color: rgb(227, 197, 255);
+  width: 100%;
+}
+
+.task-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+#submit-task-window {
+  margin: 30px;
+  background-color: rgb(180, 206, 207);
+}
+
+/* Single task style */
+
+.single-task-container {
+  display: flex;
+  background-color: pink;
+  width: 100%;
+}
+
+.task-title-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.task-title-container h5 {
+  padding-left: 1rem;
+  flex: 1;
+}
+
+.dot {
+  height: 13px;
+  width: 13px;
+  margin-left: 0.7rem;
+  border: 1px solid grey;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#edit-task-window {
+  display: none;
+}
+
+#edit-task-window.visible {
+  display: block;
+}
