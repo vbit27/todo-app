@@ -29,6 +29,8 @@ function addTasksListeners() {
         deleteTask(index);
     })})
 
+    
+
   /*  function removeTask() {
         const index = Array.from(deleteTaskBtn).indexOf(this)
 
