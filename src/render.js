@@ -1,5 +1,5 @@
 import { allProjects } from ".";
-import { addProjectListeners } from "./DynamicListener";
+import { addProjectListeners, addTasksListeners } from "./DynamicListener";
 import { activeProject } from './Logic'
 
 function renderProjects() {
@@ -90,9 +90,10 @@ function renderTasks() {
             taskContainer.appendChild(singleTask)
 
         })
-    }    
+    }  
     
-    
+    addTasksListeners();  
+       
 }
 
 

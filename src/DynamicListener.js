@@ -1,4 +1,4 @@
-import { deleteProject, setActiveProject } from './Logic'
+import { deleteProject, setActiveProject, deleteTask } from './Logic'
 
 function addProjectListeners() {
     const projectElements = document.querySelectorAll('.single-project-container h3')
@@ -24,9 +24,12 @@ function addTasksListeners() {
     const editTaskBtn = document.querySelectorAll('.edit-task');
     const editTaskWindow = document.getElementById('edit-task-window');
 
+    deleteTaskBtn.forEach((project) => { project.addEventListener('click', function() {
+        let index = this.parentNode.getAttribute('data-index');
+        deleteTask(index);
+    })})
 
-
-    function removeTask() {
+  /*  function removeTask() {
         const index = Array.from(deleteTaskBtn).indexOf(this)
 
         this.parentNode.remove()
@@ -37,7 +40,7 @@ function addTasksListeners() {
     function updateTaskStatus() {
         const index = Array.from(taskTitleElements).indexOf(this)
         allProjects[activeProject].tasks[index].setStatus()
-    }
+    }*/
 }
 
-export { addProjectListeners }
+export { addProjectListeners, addTasksListeners }
