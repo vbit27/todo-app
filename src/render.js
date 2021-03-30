@@ -1,3 +1,4 @@
+import { allProjects } from ".";
 import { addProjectListeners } from "./DynamicListener";
 import { activeProject } from './Logic'
 
@@ -31,22 +32,25 @@ function renderHeader() {
 
     activeProjectDetails.innerHTML = "";
 
-    const activeTitle = document.createElement('h3');
-    activeTitle.innerText = activeProject().name;
 
-    const activeDescription = document.createElement('h5');
-    activeDescription.innerText = activeProject().description;
+    if(activeProject()) {
+        const activeTitle = document.createElement('h3');
+        activeTitle.innerText = activeProject().name;
 
-    activeProjectDetails.appendChild(activeTitle);
-    activeProjectDetails.appendChild(activeDescription);
+        const activeDescription = document.createElement('h5');
+        activeDescription.innerText = activeProject().description;
 
+        activeProjectDetails.appendChild(activeTitle);
+        activeProjectDetails.appendChild(activeDescription);
+    }
 }
 
 function renderTasks() {
         const taskContainer = document.querySelector('.task-list-container')
 
         taskContainer.innerHTML = '';
-    
+
+    if(activeProject()) {
         activeProject().tasks.forEach((task, index) => {
             const singleTask = document.createElement('div');
             singleTask.classList.add('single-task-container');
@@ -86,6 +90,7 @@ function renderTasks() {
             taskContainer.appendChild(singleTask)
 
         })
+    }    
     
     
 }

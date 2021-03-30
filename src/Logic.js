@@ -8,10 +8,8 @@ const createNewProject = (name, description) => {
     resetActiveProject()
     allProjects.push(newProject(name, description))
 
-    renderProjects();
-    renderTasks;
+    updateUI();
     displayHeader.show()
-    renderHeader();
 }
 
 const deleteProject = (index) => {
@@ -21,14 +19,13 @@ const deleteProject = (index) => {
 
     if (allProjects.length == 1) {
         allProjects.splice(index, 1)
-        renderProjects();
+        updateUI();
         displayHeader.hide();
     }
 
     if (allProjects.length > 1) {
         allProjects.splice(index, 1)
-        renderProjects();
-        renderHeader();
+        updateUI();
     }
 
 }
@@ -40,7 +37,7 @@ const resetActiveProject = () => {
 const setActiveProject = (index) => {
     resetActiveProject();
     allProjects[index].active = true;
-    renderHeader();
+    updateUI();
 }
 
 const activeProject = () => {
@@ -51,6 +48,12 @@ const activeProject = () => {
 
 const createNewTask = (name, dueDate, priority) => {
     activeProject().tasks.push(newTask(name, dueDate, priority));
+    renderTasks();
+}
+
+const updateUI = () => {
+    renderProjects();
+    renderHeader();
     renderTasks();
 }
 

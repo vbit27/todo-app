@@ -62,6 +62,7 @@ const displayHeader = (() => {
 
 })() 
 
+
 const newTaskDom = (() => {
     const addTaskBtn = document.querySelector('.add-task')
     const addTaskWindow = document.getElementById('submit-task-window');

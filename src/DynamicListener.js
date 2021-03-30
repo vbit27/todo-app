@@ -16,4 +16,28 @@ function addProjectListeners() {
     })})
 }
 
+
+function addTasksListeners() {
+
+    const taskTitleElements = document.querySelectorAll('.task-title-container');
+    const deleteTaskBtn = document.querySelectorAll('.delete-task');
+    const editTaskBtn = document.querySelectorAll('.edit-task');
+    const editTaskWindow = document.getElementById('edit-task-window');
+
+
+
+    function removeTask() {
+        const index = Array.from(deleteTaskBtn).indexOf(this)
+
+        this.parentNode.remove()
+        allProjects[activeProject].deleteTask(index)
+        renderTasks(activeProject)
+    }
+    
+    function updateTaskStatus() {
+        const index = Array.from(taskTitleElements).indexOf(this)
+        allProjects[activeProject].tasks[index].setStatus()
+    }
+}
+
 export { addProjectListeners }
