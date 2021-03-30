@@ -1,4 +1,4 @@
-import { createNewProject } from './Logic'
+import { createNewProject, createNewTask } from './Logic'
 import { renderProjects, renderHeader } from './render'
 
 
@@ -63,11 +63,50 @@ const displayHeader = (() => {
 })() 
 
 const newTaskDom = (() => {
-    const addTaskBtn = document.querySelector('')
+    const addTaskBtn = document.querySelector('.add-task')
+    const addTaskWindow = document.getElementById('submit-task-window');
+    const submitTaskBtn = document.getElementById('submit-task');
+    const cancelTaskBtn = document.getElementById('cancel-submit-task')
+    const _nameField = document.getElementById('task-name');
+    const _dueDateField = document.getElementById('task-due-date');
+    const _priorityField = document.getElementById('priority');
 
+    function show() {
+        addTaskWindow.style.display = "block";
+    }
+
+    function hide() {
+        clear()
+        addTaskWindow.style.display = "none";
+    }
+
+    function clear() {
+        _nameField.value = '';
+        _dueDateField.value = '';
+        _priorityField.value = '';
+    }
+
+    function submitTask() {
+        let name = _nameField.value;
+        let dueDate = _dueDateField.value;
+        let priority = _priorityField.value;
+
+        createNewTask(name, dueDate, priority)
+        hide()
+    }
+
+    return {
+        addTaskBtn,
+        addTaskWindow,
+        submitTaskBtn,
+        cancelTaskBtn,
+        submitTask,
+        show,
+        hide
+    }
 
 })();
 
 
-export {newProjectDom, displayHeader};
+export {newProjectDom, displayHeader, newTaskDom};
 

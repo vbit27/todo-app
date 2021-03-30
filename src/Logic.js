@@ -1,7 +1,7 @@
 import { allProjects } from './index'
 import { newProject } from './Project'
 import { newTask } from './Task'
-import { renderProjects, renderHeader } from './render'
+import { renderProjects, renderHeader, renderTasks } from './render'
 import { displayHeader } from './DomFunctionality'
 
 const createNewProject = (name, description) => {
@@ -9,6 +9,7 @@ const createNewProject = (name, description) => {
     allProjects.push(newProject(name, description))
 
     renderProjects();
+    renderTasks;
     displayHeader.show()
     renderHeader();
 }
@@ -48,8 +49,9 @@ const activeProject = () => {
 } 
 
 
-const createNewTask = (name, description, dueDate, priority) => {
-    activeProject().tasks.push(newTask(name, description, dueDate, priority))
+const createNewTask = (name, dueDate, priority) => {
+    activeProject().tasks.push(newTask(name, dueDate, priority));
+    renderTasks();
 }
 
-export { createNewProject, deleteProject, setActiveProject, activeProject }
+export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask }

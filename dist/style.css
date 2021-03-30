@@ -22,16 +22,6 @@ nav {
   height: 100vh;
 }
 
-/* POP UP WINDOWS */
-
-#submit-task-window {
-  display: none;
-}
-
-#submit-task-window.visible {
-  display: block;
-}
-
 /* Project style */
 
 #add-project {
