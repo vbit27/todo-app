@@ -27,7 +27,6 @@ const deleteProject = (index) => {
         allProjects.splice(index, 1)
         updateUI();
     }
-
 }
 
 const resetActiveProject = () => {
@@ -69,6 +68,8 @@ const updateTaskStatus = (index) => {
     activeProject().tasks[index].complete ?
         activeProject().tasks[index].complete = false :
         activeProject().tasks[index].complete = true;
+
+        updateUI();
     };
 
 const updateUI = () => {
@@ -77,4 +78,5 @@ const updateUI = () => {
     renderTasks();
 }
 
-export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask, deleteTask, editTask, updateTaskStatus }
+export { createNewProject, deleteProject, setActiveProject, 
+        activeProject, createNewTask, deleteTask, editTask, updateTaskStatus }

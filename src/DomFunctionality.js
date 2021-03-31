@@ -1,5 +1,4 @@
 import { createNewProject, createNewTask, editTask } from './Logic'
-import { renderProjects, renderHeader } from './render'
 
 
 const newProjectDom = (() => {
@@ -25,12 +24,15 @@ const newProjectDom = (() => {
     }
 
     function submitProject () {
-        const name = _nameField.value;
-        const description = _descriptionField.value;
+        if (_nameField.value !== '' && _descriptionField.value !== '') {
 
-        createNewProject(name, description);
-        clear();
-        hide();
+            const name = _nameField.value;
+            const description = _descriptionField.value;
+
+            createNewProject(name, description);
+            clear();
+            hide();
+        } else alert('Please fill all requierd fields.');
     }
 
     return {
@@ -88,12 +90,14 @@ const newTaskDom = (() => {
     }
 
     function submitTask() {
-        let name = _nameField.value;
-        let dueDate = _dueDateField.value;
-        let priority = _priorityField.value;
+        if (_nameField.value !== '' && _dueDateField.value !== '' && _priorityField.value !== '') {
+            let name = _nameField.value;
+            let dueDate = _dueDateField.value;
+            let priority = _priorityField.value;
 
-        createNewTask(name, dueDate, priority)
-        hide()
+            createNewTask(name, dueDate, priority)
+            hide()
+        } else alert('Please fill all required fields')    
     }
 
     return {
@@ -134,12 +138,14 @@ const editTaskDom = (() => {
     }
 
     function updateTask() {
-        let name = _nameField.value;
-        let dueDate = _dueDateField.value;
-        let priority = _priorityField.value;
+        if (_nameField.value !== '' && _dueDateField.value !== '' && _priorityField.value !== '') {
+            let name = _nameField.value;
+            let dueDate = _dueDateField.value;
+            let priority = _priorityField.value;
 
-        editTask(selectedTask, name, dueDate, priority);
-        hide();
+            editTask(selectedTask, name, dueDate, priority);
+            hide();
+        } else alert('Please fill all required fields')
     }
 
     return {

@@ -21,7 +21,6 @@ function addTasksListeners() {
     const completeTaskBtn = document.querySelectorAll('.task-title-container');
     const deleteTaskBtn = document.querySelectorAll('.delete-task');
     const editTaskBtn = document.querySelectorAll('.edit-task');
-    const editTaskWindow = document.getElementById('edit-task-window');
 
     deleteTaskBtn.forEach((project) => { project.addEventListener('click', function() {
         let index = this.parentNode.getAttribute('data-index');
@@ -29,7 +28,7 @@ function addTasksListeners() {
     })})
 
     editTaskBtn.forEach((project) => { project.addEventListener('click', function(){
-        let index = this.parentNode.getAttribute('data-index'); // grab the index of the clicked item
+        let index = this.parentNode.getAttribute('data-index'); // grab the index of the clicked task
         editTaskDom.show(index)
     })})
 
