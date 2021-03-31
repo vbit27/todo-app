@@ -1,4 +1,5 @@
 import { deleteProject, setActiveProject, deleteTask } from './Logic'
+import { editTaskDom } from './DomFunctionality'
 
 function addProjectListeners() {
     const projectElements = document.querySelectorAll('.single-project-container h3')
@@ -30,7 +31,10 @@ function addTasksListeners() {
     })})
 
     
-
+    editTaskBtn.forEach((project) => { project.addEventListener('click', function(){
+        let index = this.parentNode.getAttribute('data-index');
+        editTaskDom.show(index)
+    })})
   /*  function removeTask() {
         const index = Array.from(deleteTaskBtn).indexOf(this)
 

@@ -1,4 +1,4 @@
-import { createNewProject, createNewTask } from './Logic'
+import { createNewProject, createNewTask, editTask } from './Logic'
 import { renderProjects, renderHeader } from './render'
 
 
@@ -108,6 +108,50 @@ const newTaskDom = (() => {
 
 })();
 
+const editTaskDom = (() => {
+    const editTaskWindow = document.getElementById('edit-task-window');
+    const updateTaskBtn = document.getElementById('update-task');
+    const cancelUpdateBtn = document.getElementById('cancel-update-task');
+    const _nameField = document.getElementById('edit-task-name');
+    const _dueDateField = document.getElementById('edit-task-due-date');
+    const _priorityField = document.getElementById('edit-priority');
+    let selectedTask; // index of the active task
 
-export {newProjectDom, displayHeader, newTaskDom};
+    function show(index) {
+        editTaskWindow.style.display = 'block';
+        selectedTask = index;
+    }
+
+    function hide() {
+        clear()
+        editTaskWindow.style.display = "none";
+    }
+
+    function clear() {
+        _nameField.value = '';
+        _dueDateField.value = '';
+        _priorityField.value = '';
+    }
+
+    function updateTask() {
+        let name = _nameField.value;
+        let dueDate = _dueDateField.value;
+        let priority = _priorityField.value;
+
+        editTask(selectedTask, name, dueDate, priority);
+        hide();
+    }
+
+    return {
+        updateTaskBtn,
+        cancelUpdateBtn,
+        show,
+        hide,
+        updateTask
+    }
+
+})()
+
+
+export {newProjectDom, displayHeader, newTaskDom, editTaskDom};
 

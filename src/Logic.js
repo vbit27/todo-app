@@ -54,7 +54,16 @@ const createNewTask = (name, dueDate, priority) => {
 const deleteTask = (index) => {
    activeProject().tasks.splice(index, 1);
    updateUI()
-}
+};
+
+
+const editTask = (index, name, dueDate, priority) => {
+    activeProject().tasks[index].name = name;
+    activeProject().tasks[index].dueDate = dueDate;
+    activeProject().tasks[index].priority = priority;
+    
+    updateUI();
+};
 
 const updateUI = () => {
     renderProjects();
@@ -62,4 +71,4 @@ const updateUI = () => {
     renderTasks();
 }
 
-export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask, deleteTask }
+export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask, deleteTask, editTask }

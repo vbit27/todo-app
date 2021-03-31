@@ -35,15 +35,11 @@
         </div>
         <div class="tasks-container">
             <div class="active-project-container" style="display: none;">
-                <div class="active-project-description">
-                    <h3>This is a project</h3>
-                    <h5>this is a description</h5>
-                </div>
+                <div class="active-project-description"></div>
                 <button class="add-task">Add Task</button>
             </div>
             <div class="task-list-container">
                 <div class="single-task-container"><div class="task-title-container"><span class="dot"></span><h5>rwre</h5><h6>2021-03-16</h6></div><button class="edit-task">Edit</button><button class="delete-task">X</button></div>
-    
             </div>
             <div id="submit-task-window" style="display: none;">
                 <div>
@@ -67,16 +63,11 @@
                     <button id="cancel-submit-task">Cancel</button>
                 </div>
             </div>
-            <div id="edit-task-window" class="">
-                <form action="">
+            <div id="edit-task-window" style="display: none;">
                 <div>
                     <label for="tName">Title of Task</label>
                     <input type="text" id="edit-task-name" placeholder="Title">
                 </div> 
-                <div>
-                    <label for="tDescription"> Description of Task</label>
-                    <input type="text" id="edit-task-description" placeholder="Description">
-                </div>
                 <div>
                     <label for="tdueDate">Due date</label>
                     <input type="date" id="edit-task-due-date">
@@ -85,14 +76,15 @@
                     <label for="tPriority">Priority</label>
                     <input list="priority-value" id="edit-priority">
                     <datalist id="priority-value">
-                        <option value="High">
-                        </option><option value="Low">
-                    </option></datalist>
+                        <option value="High"></option>
+                        <option value="Low"></option>
+                    </datalist>
                 </div>
                 <div>
-                    <button id="edit-task">Add Task</button>
+                    <button id="update-task">Update Task</button>
+                    <button id="cancel-update-task">Cancel</button>
+
                 </div>
-                </form>
             </div>
         </div>
     </div>

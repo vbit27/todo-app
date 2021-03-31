@@ -1,4 +1,4 @@
-import { newProjectDom, newTaskDom } from './DomFunctionality'
+import { newProjectDom, newTaskDom, editTaskDom } from './DomFunctionality'
 
 
 newProjectDom.addProjectBtn.addEventListener('click' , newProjectDom.show)
@@ -8,3 +8,6 @@ newProjectDom.submitProjectBtn.addEventListener('click', newProjectDom.submitPro
 newTaskDom.addTaskBtn.addEventListener('click', newTaskDom.show)
 newTaskDom.submitTaskBtn.addEventListener('click', newTaskDom.submitTask)
 newTaskDom.cancelTaskBtn.addEventListener('click', newTaskDom.hide)
+
+editTaskDom.updateTaskBtn.addEventListener('click', editTaskDom.updateTask)
+editTaskDom.cancelUpdateBtn.addEventListener('click', editTaskDom.hide)

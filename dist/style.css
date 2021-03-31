@@ -117,11 +117,3 @@ nav {
   border-radius: 50%;
   display: inline-block;
 }
-
-#edit-task-window {
-  display: none;
-}
-
-#edit-task-window.visible {
-  display: block;
-}
