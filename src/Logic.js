@@ -61,9 +61,15 @@ const editTask = (index, name, dueDate, priority) => {
     activeProject().tasks[index].name = name;
     activeProject().tasks[index].dueDate = dueDate;
     activeProject().tasks[index].priority = priority;
-    
+
     updateUI();
 };
+
+const updateTaskStatus = (index) => {
+    activeProject().tasks[index].complete ?
+        activeProject().tasks[index].complete = false :
+        activeProject().tasks[index].complete = true;
+    };
 
 const updateUI = () => {
     renderProjects();
@@ -71,4 +77,4 @@ const updateUI = () => {
     renderTasks();
 }
 
-export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask, deleteTask, editTask }
+export { createNewProject, deleteProject, setActiveProject, activeProject, createNewTask, deleteTask, editTask, updateTaskStatus }

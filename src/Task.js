@@ -1,5 +1,5 @@
 export const newTask = (name, dueDate, priority) => {
-    let complete = true;
+    let complete = false;
     return {
         name,
         dueDate,

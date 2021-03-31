@@ -1,10 +1,9 @@
-import { deleteProject, setActiveProject, deleteTask } from './Logic'
+import { deleteProject, setActiveProject, deleteTask, updateTaskStatus } from './Logic'
 import { editTaskDom } from './DomFunctionality'
 
 function addProjectListeners() {
     const projectElements = document.querySelectorAll('.single-project-container h3')
     const deleteProjectBtn = document.querySelectorAll('.delete-project-btn');
-
 
     projectElements.forEach((project) => { project.addEventListener('click', function() {
         let index = this.parentNode.getAttribute('data-index');
@@ -19,8 +18,7 @@ function addProjectListeners() {
 
 
 function addTasksListeners() {
-
-    const taskTitleElements = document.querySelectorAll('.task-title-container');
+    const completeTaskBtn = document.querySelectorAll('.task-title-container');
     const deleteTaskBtn = document.querySelectorAll('.delete-task');
     const editTaskBtn = document.querySelectorAll('.edit-task');
     const editTaskWindow = document.getElementById('edit-task-window');
@@ -30,23 +28,15 @@ function addTasksListeners() {
         deleteTask(index);
     })})
 
-    
     editTaskBtn.forEach((project) => { project.addEventListener('click', function(){
-        let index = this.parentNode.getAttribute('data-index');
+        let index = this.parentNode.getAttribute('data-index'); // grab the index of the clicked item
         editTaskDom.show(index)
     })})
-  /*  function removeTask() {
-        const index = Array.from(deleteTaskBtn).indexOf(this)
 
-        this.parentNode.remove()
-        allProjects[activeProject].deleteTask(index)
-        renderTasks(activeProject)
-    }
-    
-    function updateTaskStatus() {
-        const index = Array.from(taskTitleElements).indexOf(this)
-        allProjects[activeProject].tasks[index].setStatus()
-    }*/
+    completeTaskBtn.forEach((project) => { project.addEventListener('click', function(){
+        let index = this.parentNode.getAttribute('data-index');
+        updateTaskStatus(index)
+    })})
 }
 
 export { addProjectListeners, addTasksListeners }
