@@ -1,19 +1,26 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #323b4f;
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+  color: #5c6473;
 }
 
 header {
   padding: 1rem 0;
-  font-family: Arial;
-  font-size: 3vw;
+  font-family: 'Yeseva One', cursive;
+  font-size: 3.3vw;
   letter-spacing: 0.1rem;
-  background-color: #73a780;
-  color: #ffffff;
+  color: #323b4f;
   height: fit-content;
-  text-align: center;
+  text-align: left;
+  margin-left: 1rem;
 }
 
 .grid-container {
@@ -24,35 +31,51 @@ header {
 
 /* Project style */
 
-#add-project {
-  width: 30%;
-  border: none;
-  border-radius: 10%;
-  margin: 0.2rem;
-  background: #fa994d;
-  color: white;
-}
-
 .project-container {
-  background-color: rgb(255, 255, 255);
+  align-items: center;
 }
 
 .project-container-title {
+  background-color: #f8faff;
+
   display: flex;
   flex-wrap: wrap;
 }
 
-.project-container-title h3 {
-  flex-grow: 6;
+.project-container-title h4 {
+  margin-left: 0.5rem;
+  flex-grow: 1;
 }
 
-.project-container-title button {
-  flex-grow: 1;
+#add-project {
+  border: none;
+  margin-right: 0.5rem;
+  padding: 1rem;
+  height: fit-content;
+  border: 1px solid #2268ff;
+  background-color: #f8faff;
+  color: #2268ff;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  transition: 0.3s;
+  align-self: center;
+}
+
+#add-project:hover {
+  background-color: #2268ff;
+  color: white;
+}
+
+#project-list {
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 1rem;
 }
 
 .single-project-container {
   display: flex;
   flex-wrap: wrap;
+  height: fit-content;
 }
 
 .single-project-container h3 {
@@ -60,9 +83,21 @@ header {
 }
 
 .single-project-container button {
-  flex-grow: 1;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: white;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 50%;
+  align-self: center;
+  color: #9ba9c2;
+  transition: 0.3s;
 }
 
+.single-project-container button:hover {
+  background-color: rgb(253, 241, 241);
+  color: red;
+}
 /* Task Style */
 
 .tasks-container {
@@ -116,4 +151,58 @@ header {
   border: 1px solid grey;
   border-radius: 50%;
   display: inline-block;
+}
+
+/* SUBMIT WINDOWS */
+input {
+  display: block;
+  margin: 1rem auto;
+  width: 70%;
+  padding: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #a8adb3;
+  padding: 5px 10px;
+  outline: none;
+}
+
+input:hover {
+  border-bottom: 1px solid #2268ff;
+}
+
+input:focus {
+  border-bottom: 1px solid #2268ff;
+}
+
+.submit-project-window button {
+  margin: 1rem 0.7rem;
+  border: none;
+  padding: 0.8em 2.2em;
+  border-radius: 24px;
+  letter-spacing: 0.08rem;
+  background-color: #f4f6fc;
+  transition: 0.3s;
+}
+
+#submit-project {
+  color: #2268ff;
+  transition: 0.3s;
+}
+
+#submit-project:hover {
+  color: white;
+}
+
+.submit-project-window button:hover {
+  background-color: #2268ff;
+  color: white;
+}
+
+#submit-project {
+}
+
+.submit-project-window .project-button-container {
+  text-align: center;
+}
+
+#project-name {
 }

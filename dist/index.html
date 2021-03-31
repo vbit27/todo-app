@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <title>todo-app</title>
 </head>
 <body>
     <header>
-        TODO LIST
+        todo-list
     </header>
         
     <div class="grid-container">
         <div class="project-container">
             <div class="project-container-title">
-                <h3>Projects</h3>
+                <h4>Projects</h4>
                 <button id="add-project">Add</button>
             </div>
-            <div class="submit-project-window" style="display: none;">
+            <div class="submit-project-window" style="display: block;">
                 <div>
-                    <label for="pName">Title of Project</label>
                     <input type="text" id="project-name" placeholder="Title">
                 </div> 
                 <div>
-                    <label for="pDescription"> Description of Project</label>
                     <input type="text" id="project-description" placeholder="Description">
                 </div>
-                <div>
+                <div class="project-button-container">
                     <button id="submit-project">Submit</button>
                     <button id="cancel-submit-project">Cancel</button>
                 </div>
             </div>
-            <div id="project-list"></div>
+            <div id="project-list">
+                <div class="single-project-container" data-index="0"><h3>My First Project</h3><button class="delete-project-btn">X</button></div>            </div>
         </div>
         <div class="tasks-container">
             <div class="active-project-container" style="display: none;">
