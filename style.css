@@ -38,8 +38,6 @@ h3 {
 }
 
 .project-container-title {
-  background-color: #f8faff;
-
   display: flex;
   flex-wrap: wrap;
 }
@@ -79,16 +77,22 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   height: fit-content;
+  cursor: pointer;
+}
+
+.single-project-container:hover {
+  background-color: #f8faff;
 }
 
 .single-project-container h3 {
   flex-grow: 6;
+  padding-left: 1rem;
 }
 
 .single-project-container button {
   width: 2.2rem;
   height: 2.2rem;
-  background-color: white;
+  background-color: transparent;
   border: none;
   padding: 0.3rem;
   border-radius: 50%;
@@ -100,6 +104,15 @@ h3 {
 .single-project-container button:hover {
   background-color: rgb(253, 241, 241);
   color: red;
+  cursor: pointer;
+}
+
+.active-project {
+  background-color: #f8faff;
+}
+
+.active-project h3 {
+  color: #2268ff;
 }
 
 /* Task Style */
@@ -167,10 +180,11 @@ h3 {
   background-color: rgb(255, 255, 255);
   width: 100%;
   transition: 0.2s;
+  margin-top: 0.2rem;
 }
 .single-task-container:hover {
   box-shadow: 0px 2px 20px #eff1f5;
-  transform: scale(1.01);
+  transform: scale(1.005);
   cursor: pointer;
 }
 
