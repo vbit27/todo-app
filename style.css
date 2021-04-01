@@ -52,8 +52,8 @@ h3 {
   margin-right: 0.5rem;
   padding: 0.8rem 1.5rem;
   height: fit-content;
-  background-color: #2268ff;
-  color: white;
+  background-color: #e4efff;
+  color: #2268ff;
   border: none;
   font-size: 1rem;
   letter-spacing: 0.1rem;
@@ -63,9 +63,8 @@ h3 {
 }
 
 #add-project:hover {
-  background-color: white;
-  color: #2268ff;
-  border: 1px solid #2268ff;
+  background-color: #2268ff;
+  color: white;
 }
 
 #project-list {
@@ -138,12 +137,20 @@ h3 {
   border: none;
   height: 3rem;
   padding: 1rem;
+  letter-spacing: 0.1rem;
   border-radius: 12px;
   color: white;
   width: fit-content;
   flex-grow: auto;
   margin-right: 2rem;
   align-self: center;
+  transition: 0.3s;
+}
+
+.add-task:hover {
+  background-color: white;
+  color: #2268ff;
+  border: 1px solid #2268ff;
 }
 
 .active-project-description {
@@ -168,11 +175,6 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
-}
-
-#submit-task-window {
-  margin: 30px;
-  background-color: rgb(180, 206, 207);
 }
 
 /* Single task style */
@@ -271,6 +273,8 @@ h3 {
 
 /* SUBMIT WINDOWS */
 
+/* Add Project pop up window */
+
 input {
   display: block;
   margin: 1rem auto;
@@ -296,7 +300,9 @@ input:focus {
   padding: 0.8em 2.2em;
   border-radius: 24px;
   letter-spacing: 0.08rem;
-  background-color: #f4f6fc;
+  border: 1px solid #2268ff;
+  color: #2268ff;
+  background-color: transparent;
   transition: 0.3s;
 }
 
@@ -309,5 +315,88 @@ input:focus {
   text-align: center;
 }
 
-#project-name {
+/* Add task pop window */
+
+#submit-task-window {
+  max-width: 400px;
+  width: 70%;
+  border-radius: 14px;
+  margin: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 20px #eff1f5;
+}
+
+#submit-task-window input {
+  display: block;
+  margin: 1rem auto;
+  width: 70%;
+  padding: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #c0bebe;
+  padding: 5px 10px;
+  outline: none;
+}
+
+#submit-task-window button {
+  margin: 1rem 0.7rem;
+  border: none;
+  padding: 0.8em 2.2em;
+  border-radius: 24px;
+  letter-spacing: 0.08rem;
+  border: 1px solid #2268ff;
+  color: #2268ff;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+#submit-task-window button:hover {
+  background-color: #2268ff;
+  color: white;
+}
+
+.button-add-task-container {
+  text-align: center;
+}
+
+/* Edit task pop up window */
+
+#edit-task-window {
+  max-width: 400px;
+  width: 70%;
+  border-radius: 14px;
+  margin: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 20px #eff1f5;
+}
+
+#edit-task-window input {
+  display: block;
+  margin: 1rem auto;
+  width: 70%;
+  padding: 0.2rem;
+  border: none;
+  border-bottom: 1px solid #c0bebe;
+  padding: 5px 10px;
+  outline: none;
+}
+
+#edit-task-window button {
+  margin: 1rem 0.7rem;
+  border: none;
+  padding: 0.8em 2.2em;
+  border-radius: 24px;
+  letter-spacing: 0.08rem;
+  border: 1px solid #2268ff;
+  color: #2268ff;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+#edit-task-window button:hover {
+  background-color: #2268ff;
+  color: white;
+}
+
+.button-edit-task-container {
+  text-align: center;
 }
