@@ -3,6 +3,7 @@ body {
   padding: 0;
   color: #323b4f;
   font-family: 'Merriweather Sans', sans-serif;
+  background-color: wh;
 }
 
 h3 {
@@ -12,7 +13,7 @@ h3 {
   color: #5c6473;
 }
 
-header {
+.logo {
   padding: 1rem 0;
   font-family: 'Yeseva One', cursive;
   font-size: 3.3vw;
@@ -33,6 +34,7 @@ header {
 
 .project-container {
   align-items: center;
+  border-right: 1.5px solid #eaeaec;
 }
 
 .project-container-title {
@@ -48,22 +50,23 @@ header {
 }
 
 #add-project {
-  border: none;
   margin-right: 0.5rem;
-  padding: 1rem;
+  padding: 0.8rem 1.5rem;
   height: fit-content;
-  border: 1px solid #2268ff;
-  background-color: #f8faff;
-  color: #2268ff;
+  background-color: #2268ff;
+  color: white;
+  border: none;
   font-size: 1rem;
   letter-spacing: 0.1rem;
-  transition: 0.3s;
   align-self: center;
+  border-radius: 24px;
+  transition: 0.3s;
 }
 
 #add-project:hover {
-  background-color: #2268ff;
-  color: white;
+  background-color: white;
+  color: #2268ff;
+  border: 1px solid #2268ff;
 }
 
 #project-list {
@@ -98,23 +101,54 @@ header {
   background-color: rgb(253, 241, 241);
   color: red;
 }
+
 /* Task Style */
 
 .tasks-container {
-  background-color: rgb(216, 236, 195);
+  background-color: #f9f9fb;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .active-project-container {
-  display: flex;
-  direction: row;
-  background-color: rgb(227, 197, 255);
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
   width: 100%;
 }
 
+.add-task {
+  background-color: #2268ff;
+  border: none;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  width: fit-content;
+  flex-grow: auto;
+  margin-right: 2rem;
+  align-self: center;
+}
+
+.active-project-description {
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+
+.active-project-description h3 {
+  font-size: 2rem;
+  line-height: 0px;
+}
+
+.active-project-description h5 {
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: #a8adb3;
+  line-height: 0px;
+}
+
 .task-list-container {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   width: 70%;
@@ -129,8 +163,15 @@ header {
 
 .single-task-container {
   display: flex;
-  background-color: pink;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
   width: 100%;
+  transition: 0.2s;
+}
+.single-task-container:hover {
+  box-shadow: 0px 2px 20px #eff1f5;
+  transform: scale(1.01);
+  cursor: pointer;
 }
 
 .task-title-container {
@@ -153,7 +194,48 @@ header {
   display: inline-block;
 }
 
+.task-title-container h6 {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: #626468;
+  line-height: 0px;
+  padding: 0 1rem;
+}
+
+.edit-task {
+  background-color: white;
+  border: none;
+  border: none;
+  align-self: center;
+  color: #9ba9c2;
+  transition: 0.3s;
+  padding: 0.5rem;
+}
+
+.edit-task:hover {
+  color: #2268ff;
+  cursor: pointer;
+}
+
+.delete-task {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: white;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 50%;
+  align-self: center;
+  color: #9ba9c2;
+  transition: 0.3s;
+}
+
+.delete-task:hover {
+  background-color: rgb(253, 241, 241);
+  color: red;
+}
+
 /* SUBMIT WINDOWS */
+
 input {
   display: block;
   margin: 1rem auto;
@@ -183,21 +265,9 @@ input:focus {
   transition: 0.3s;
 }
 
-#submit-project {
-  color: #2268ff;
-  transition: 0.3s;
-}
-
-#submit-project:hover {
-  color: white;
-}
-
 .submit-project-window button:hover {
   background-color: #2268ff;
   color: white;
-}
-
-#submit-project {
 }
 
 .submit-project-window .project-button-container {
