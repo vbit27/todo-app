@@ -12,12 +12,18 @@ function renderProjects() {
     singleProjectContainer.classList.add('single-project-container');
     singleProjectContainer.setAttribute('data-index', index)
 
+    if (project.active === true) {
+        singleProjectContainer.classList.add('active-project');
+    }
+
     const projectTitle = document.createElement('h3')
     projectTitle.innerText = project.name;
 
     const deleteProjectBtn = document.createElement('button');
     deleteProjectBtn.innerText = 'X';
     deleteProjectBtn.classList.add('delete-project-btn')
+
+
 
     singleProjectContainer.appendChild(projectTitle)
     singleProjectContainer.appendChild(deleteProjectBtn)

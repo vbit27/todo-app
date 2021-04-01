@@ -10,6 +10,7 @@ const createNewProject = (name, description) => {
 
     updateUI();
     displayHeader.show()
+
 }
 
 const deleteProject = (index) => {
@@ -43,6 +44,7 @@ const activeProject = () => {
     let activeProject = allProjects.find(project => project.active == true)
     return activeProject
 } 
+
 
 
 const createNewTask = (name, dueDate, priority) => {
