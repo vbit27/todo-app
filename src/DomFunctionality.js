@@ -15,6 +15,8 @@ const newProjectDom = (() => {
     }
 
     function show() {
+        editTaskDom.hide();
+        newTaskDom.hide();
         submitProjectWindow.style.display = "block";
     }
 
@@ -50,7 +52,7 @@ const displayHeader = (() => {
     const headerContainer = document.querySelector('.active-project-container');
 
     function show() {
-        headerContainer.style.display = "block";
+        headerContainer.style.display = "flex";
     }
 
     function hide() {
@@ -75,6 +77,8 @@ const newTaskDom = (() => {
     const _priorityField = document.getElementById('priority');
 
     function show() {
+        editTaskDom.hide();
+        newProjectDom.hide();
         addTaskWindow.style.display = "block";
     }
 
@@ -122,6 +126,8 @@ const editTaskDom = (() => {
     let selectedTask; // index of the active task
 
     function show(index) {
+        newProjectDom.hide();
+        newTaskDom.hide()
         editTaskWindow.style.display = 'block';
         selectedTask = index;
     }
@@ -157,6 +163,7 @@ const editTaskDom = (() => {
     }
 
 })()
+
 
 
 export {newProjectDom, displayHeader, newTaskDom, editTaskDom};
