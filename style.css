@@ -3,7 +3,8 @@ body {
   padding: 0;
   color: #323b4f;
   font-family: 'Merriweather Sans', sans-serif;
-  background-color: wh;
+  background-color: white;
+  box-sizing: border-box;
 }
 
 h3 {
@@ -103,12 +104,14 @@ h3 {
 
 .single-project-container button:hover {
   background-color: rgb(253, 241, 241);
+  border-radius: 30px;
   color: red;
   cursor: pointer;
 }
 
 .active-project {
   background-color: #f8faff;
+  border-radius: 30px;
 }
 
 .active-project h3 {
@@ -246,6 +249,24 @@ h3 {
 .delete-task:hover {
   background-color: rgb(253, 241, 241);
   color: red;
+}
+
+.completed-task {
+  opacity: 0.5;
+}
+
+.completed-task h5 {
+  text-decoration: line-through;
+}
+
+.completed-task .dot {
+  height: 13px;
+  width: 13px;
+  margin-left: 0.7rem;
+  border: none;
+  background-color: rgb(180, 253, 184);
+  border-radius: 50%;
+  display: inline-block;
 }
 
 /* SUBMIT WINDOWS */
