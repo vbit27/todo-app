@@ -62,6 +62,10 @@ function renderTasks() {
             singleTask.classList.add('single-task-container');
             singleTask.setAttribute('data-index', index);
 
+            if (task.complete === true) {
+                singleTask.classList.add('completed-task');
+            }
+
             const titleContainer = document.createElement('div');
             titleContainer.classList.add('task-title-container');
 
