@@ -85,9 +85,8 @@ const updateUI = () => {
     renderProjects();
     renderHeader();
     renderTasks();
-    if (activeProject()) {
-        displayHeader.show();
-    }
+    (allProjects == []) ? displayHeader.hide() : displayHeader.show();
+
 }
 
 export { createNewProject, deleteProject, setActiveProject, 
