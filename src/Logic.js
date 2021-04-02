@@ -1,4 +1,4 @@
-import { allProjects } from './index'
+import { allProjects, setLocalMemory } from './index'
 import { newProject } from './Project'
 import { newTask } from './Task'
 import { renderProjects, renderHeader, renderTasks } from './render'
@@ -9,6 +9,7 @@ const createNewProject = (name, description) => {
     allProjects.push(newProject(name, description))
 
     updateUI();
+    setLocalMemory(allProjects);
     displayHeader.show()
 
 }
@@ -28,6 +29,7 @@ const deleteProject = (index) => {
         allProjects.splice(index, 1)
         updateUI();
     }
+    setLocalMemory(allProjects);
 }
 
 const resetActiveProject = () => {
@@ -38,6 +40,7 @@ const setActiveProject = (index) => {
     resetActiveProject();
     allProjects[index].active = true;
     updateUI();
+    setLocalMemory(allProjects);
 }
 
 const activeProject = () => {
@@ -50,11 +53,13 @@ const activeProject = () => {
 const createNewTask = (name, dueDate, priority) => {
     activeProject().tasks.push(newTask(name, dueDate, priority));
     renderTasks();
+    setLocalMemory(allProjects);
 }
 
 const deleteTask = (index) => {
    activeProject().tasks.splice(index, 1);
    updateUI()
+   setLocalMemory(allProjects);
 };
 
 
@@ -64,6 +69,7 @@ const editTask = (index, name, dueDate, priority) => {
     activeProject().tasks[index].priority = priority;
 
     updateUI();
+    setLocalMemory(allProjects);
 };
 
 const updateTaskStatus = (index) => {
@@ -72,13 +78,17 @@ const updateTaskStatus = (index) => {
         activeProject().tasks[index].complete = true;
 
         updateUI();
+        setLocalMemory(allProjects);
     };
 
 const updateUI = () => {
     renderProjects();
     renderHeader();
     renderTasks();
+    if (activeProject()) {
+        displayHeader.show();
+    }
 }
 
 export { createNewProject, deleteProject, setActiveProject, 
-        activeProject, createNewTask, deleteTask, editTask, updateTaskStatus }
+        activeProject, createNewTask, deleteTask, editTask, updateTaskStatus, updateUI }
