@@ -1,7 +1,7 @@
-import { allProjects, setLocalMemory } from './index'
+import { allProjects, setLocalMemory } from './Index'
 import { newProject } from './Project'
 import { newTask } from './Task'
-import { renderProjects, renderHeader, renderTasks } from './render'
+import { renderProjects, renderHeader, renderTasks } from './Render'
 import { displayHeader } from './DomFunctionality'
 
 const createNewProject = (name, description) => {
@@ -86,7 +86,6 @@ const updateUI = () => {
     renderHeader();
     renderTasks();
     (allProjects == []) ? displayHeader.hide() : displayHeader.show();
-
 }
 
 export { createNewProject, deleteProject, setActiveProject, 

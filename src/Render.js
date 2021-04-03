@@ -1,4 +1,4 @@
-import { allProjects } from ".";
+import { allProjects } from "./Index";
 import { addProjectListeners, addTasksListeners } from "./DynamicListener";
 import { activeProject } from './Logic'
 
