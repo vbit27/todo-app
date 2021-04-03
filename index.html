@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <title>todo-app</title>
 </head>
-<body>
-
-        
+<body>   
     <div class="grid-container">
         <div class="project-container">
             <div class="logo">
@@ -20,13 +18,10 @@
             </div>
             <div class="project-container-title">
                 <h4>Projects</h4>
-                <button id="add-project">Add</button>
+                <button id="add-project">+</button>
             </div>
-            
-            <div id="project-list">
-              
-              <div class="single-project-container" data-index="0"><h3>My First Project</h3><button class="delete-project-btn">X</button></div>            </div>
-              <div class="submit-project-window" style="display: none;">
+            <div id="project-list"></div>
+            <div class="submit-project-window" style="display: none;">
                 <div>
                     <input type="text" id="project-name" placeholder="Title">
                 </div> 
@@ -39,16 +34,12 @@
                 </div>
             </div>
         </div>
-
         <div class="tasks-container">
             <div class="active-project-container" style="display: none;">
-                <div class="active-project-description"><h3>First</h3><h5>Submited</h5></div>
                 <div class="active-project-description"></div>
                 <button class="add-task">+  Add Task</button>
             </div>
             <div class="task-list-container">
-
-                <div class="single-task-container"><div class="task-title-container"><span class="dot"></span><h5>rwre</h5><h6>2021-03-16</h6></div><button class="edit-task">Edit</button><button class="delete-task">X</button></div>
             </div>
             <div id="submit-task-window" style="display: none;">
                 <div>
@@ -86,12 +77,10 @@
                 <div class="button-edit-task-container">
                     <button id="update-task">Update Task</button>
                     <button id="cancel-update-task">Cancel</button>
-
                 </div>
             </div>
         </div>
     </div>
-
 
     <script src="main.js"></script>
 </body>
