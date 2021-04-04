@@ -16,7 +16,6 @@ if (!localStorage.getItem("AllProjects")) {
 }
 
 
-
 // Local Storage
 
 function getFromLocalMemory() {
