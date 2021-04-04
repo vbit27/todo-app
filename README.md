@@ -1,6 +1,7 @@
 # todo-app
 
-todo-app
+A simple todo-app build with vanilla JavaScript, CSS and Webpack. 
+[live demo!](https://vbit27.github.io/todo-app/)
 
 Fixes:
 
